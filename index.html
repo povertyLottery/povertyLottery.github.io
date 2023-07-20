@@ -9,19 +9,26 @@
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300&family=Sniglet&display=swap');
+
         html,
         body {
             margin: 0;
-            font-family: monospace;
+            font-family: 'Sniglet';
             color: hsl(197, 62%, 32%);
         }
 
         #chat {
-            width: 400px;
+            /* width: 400px;
             height: 350px;
             overflow-y: auto;
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column-reverse; */
+            display: block;
+            position: relative;
+            padding: 0px 20px 0px 20px;
+            width: 100%;
+            bottom: 0px;
         }
 
         #chat::-webkit-scrollbar {
@@ -43,6 +50,7 @@
             -webkit-animation: fadeInUp 0.5s ease forwards, fadeOut 0.5s ease 5s forwards;
         }
 
+        /* username */
         #chat div {
             display: block;
             width: max-content;
@@ -50,10 +58,10 @@
             padding: 0.3em 0.7em 0.3em 0.7em !important;
             text-overflow: ellipsis;
             overflow: hidden;
-            background-color: var(--colorONE);
-            font-family: var(--fontFAMILY);
+            background-color: --colorONE;
+            font-family: 'Sniglet';
             letter-spacing: 2px;
-            color: var(--colorTWO) !important;
+            color: --colorTWO !important;
             z-index: 2;
             left: 25px;
             position: relative;
@@ -65,15 +73,15 @@
             display: block;
             vertical-align: top;
             height: auto;
-            background-color: var(--colorTWO);
+            background-color: --colorTWO;
             z-index: 0;
             text-shadow: none;
             text-overflow: ellipsis;
             overflow: hidden;
             padding: 1.2em 1.1em 0.7em 1.1em !important;
-            font-family: var(--fontFAMILY);
+            font-family: 'Sniglet';
             letter-spacing: 1px;
-            color: var(--colorONE) !important;
+            color: --colorONE !important;
             border-radius: 25px;
             /* font-size: 1.2rem; */
         }
@@ -121,7 +129,7 @@
         var text = document.createElement("blockquote");
         var username = document.createElement("div");
 
-        username.innerText = "piss";
+        username.innerText = user;
         text.innerText = message;
 
         newMessage.append(username);
