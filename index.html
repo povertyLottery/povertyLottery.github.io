@@ -43,6 +43,24 @@
             -webkit-animation: fadeInUp 0.5s ease forwards, fadeOut 0.5s ease 5s forwards;
         }
 
+        #chat div {
+            display: block;
+            width: max-content;
+            text-align: left;
+            padding: 0.3em 0.7em 0.3em 0.7em !important;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            background-color: var(--colorONE);
+            font-family: var(--fontFAMILY);
+            letter-spacing: 2px;
+            color: var(--colorTWO) !important;
+            z-index: 2;
+            left: 25px;
+            position: relative;
+            top: 15px;
+            border-radius: 15px;
+        }
+
         #chat blockquote {
             display: block;
             vertical-align: top;
@@ -101,11 +119,12 @@
 
         var newMessage = document.createElement("li");
         var text = document.createElement("blockquote");
+        var username = document.createElement("div")
 
-
-        newMessage.innerText = user;
+        username.innterText = user;
         text.innerText = message;
 
+        newMessage.append(username);
         newMessage.append(text);
         chat.append(newMessage);
         console.log(user, message);
