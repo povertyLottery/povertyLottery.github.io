@@ -119,7 +119,7 @@
 
         var newMessage = document.createElement("li");
         var text = document.createElement("blockquote");
-        var username = document.createElement("div")
+        var username = document.createElement("div");
 
         username.innerText = user;
         text.innerText = message;
@@ -128,6 +128,7 @@
         newMessage.append(text);
         chat.append(newMessage);
         console.log(user, message);
+        console.log(username.innerText);
     }
 
     // ComfyJS.onError = ( err ) => {
